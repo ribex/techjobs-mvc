@@ -12,6 +12,15 @@
 
     <!-- TODO #3 - Use the same list display from search.html -->
 
+    <h3><span th:text="${numResults}"></span> Result(s)</h3>
+
+    <table class="job-listing" th:fragment="displayJobs" th:each="job : ${jobs}">
+        <tr th:each="column : ${job}">
+            <td th:text="${column.key}"></td>
+            <td th:text="${column.value}"></td>
+        </tr>
+    </table>
+
 </div>
 
 </body>
