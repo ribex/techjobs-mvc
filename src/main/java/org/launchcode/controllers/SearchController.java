@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import static org.launchcode.models.JobData.findByColumnAndValue;
 
@@ -28,7 +29,7 @@ public class SearchController {
     @RequestMapping(value = "results")
     public String results(Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
 
-        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+        List<HashMap<String, String>> jobs = new ArrayList<>();
         if (searchType.equals("all")) {
             jobs = JobData.findByValue(searchTerm);
         } else {

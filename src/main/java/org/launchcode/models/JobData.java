@@ -20,7 +20,7 @@ public class JobData {
     private static final String DATA_FILE = "job_data.csv";
     private static boolean isDataLoaded = false;
 
-    private static ArrayList<HashMap<String, String>> allJobs;
+    private static List<HashMap<String, String>> allJobs;
 
     /**
      * Fetch list of all values from loaded data,
@@ -29,12 +29,12 @@ public class JobData {
      * @param field The column to retrieve values from
      * @return List of all of the values of the given field
      */
-    public static ArrayList<String> findAll(String field) {
+    public static List<String> findAll(String field) {
 
         // load data, if not already loaded
         loadData();
 
-        ArrayList<String> values = new ArrayList<>();
+        List<String> values = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
             String aValue = row.get(field);
@@ -50,7 +50,7 @@ public class JobData {
         return values;
     }
 
-    public static ArrayList<HashMap<String, String>> findAll() {
+    public static List<HashMap<String, String>> findAll() {
 
         // load data, if not already loaded
         loadData();
@@ -70,12 +70,12 @@ public class JobData {
      * @param value Value of teh field to search for
      * @return List of all jobs matching the criteria
      */
-    public static ArrayList<HashMap<String, String>> findByColumnAndValue(String column, String value) {
+    public static List<HashMap<String, String>> findByColumnAndValue(String column, String value) {
 
         // load data, if not already loaded
         loadData();
 
-        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+        List<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
 
@@ -95,12 +95,12 @@ public class JobData {
      * @param value The search term to look for
      * @return      List of all jobs with at least one field containing the value
      */
-    public static ArrayList<HashMap<String, String>> findByValue(String value) {
+    public static List<HashMap<String, String>> findByValue(String value) {
 
         // load data, if not already loaded
         loadData();
 
-        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+        List<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
 
